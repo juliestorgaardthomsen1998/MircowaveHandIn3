@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandIn3Microwave", "HandIn3Microwave\HandIn3Microwave.csproj", "{3EAD0CE8-870F-4E46-9403-63FDFB2E99FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{21647FFE-2170-45C3-BC8D-C19FF6176768} = {21647FFE-2170-45C3-BC8D-C19FF6176768}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microwave.Classes", "Microwave.Classes\Microwave.Classes.csproj", "{21647FFE-2170-45C3-BC8D-C19FF6176768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microwave.Classes", "Microwave.Classes\Microwave.Classes.csproj", "{21647FFE-2170-45C3-BC8D-C19FF6176768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

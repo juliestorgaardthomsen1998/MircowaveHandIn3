@@ -1,8 +1,9 @@
 ﻿using System;
 
+
 namespace HandIn3Microwave
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
