@@ -2,9 +2,10 @@
 using Microwave.Classes.Boundary;
 using Microwave.Classes.Controllers;
 
+
 namespace HandIn3Microwave
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
