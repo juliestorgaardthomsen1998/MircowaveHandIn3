@@ -1,5 +1,8 @@
 ﻿using System;
 using Microwave.Classes;
+using Microwave.Classes.Boundary;
+using Microwave.Classes.Controllers;
+using Microwave.Classes.Interfaces;
 
 namespace HandIn3Microwave
 {

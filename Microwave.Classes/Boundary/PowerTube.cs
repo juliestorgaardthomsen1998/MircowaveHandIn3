@@ -7,7 +7,7 @@ using Microwave.Classes.Interfaces;
 
 namespace Microwave.Classes.Boundary
 {
-    class PowerTube : IPowerTube
+    public class PowerTube : IPowerTube
     {
         private IOutput myOutput;
 

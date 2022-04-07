@@ -7,7 +7,7 @@ using Microwave.Classes.Interfaces;
 
 namespace Microwave.Classes.Boundary
 {
-    class Door : IDoor
+    public class Door : IDoor
     {
         public event EventHandler Opened;
         public event EventHandler Closed;
