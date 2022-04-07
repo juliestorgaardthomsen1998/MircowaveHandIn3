@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface IPowerTube
+    public interface IPowerTube
     {
         void TurnOn(int power);
 

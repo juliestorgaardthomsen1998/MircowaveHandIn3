@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface ITimer
+    public interface ITimer
     {
         int TimeRemaining { get; }
         event EventHandler Expired;

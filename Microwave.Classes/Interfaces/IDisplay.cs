@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface IDisplay
+    public interface IDisplay
     {
         void ShowTime(int minutes, int seconds);
         void ShowPower(int power);

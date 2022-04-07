@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface ILight
+    public interface ILight
     {
         void TurnOn();
         void TurnOff();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface ICookController
+    public interface ICookController
     {
         void StartCooking(int power, int time);
         void Stop();

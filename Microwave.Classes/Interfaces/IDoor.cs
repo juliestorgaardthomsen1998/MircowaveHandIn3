@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface IDoor
+    public interface IDoor
     {
         event EventHandler Opened;
         event EventHandler Closed;

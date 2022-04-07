@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface IUserInterface
+    public interface IUserInterface
     {
         void OnPowerPressed(object sender, EventArgs e);
         void OnTimePressed(object sender, EventArgs e);
