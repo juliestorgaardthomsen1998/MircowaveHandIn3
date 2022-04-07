@@ -7,13 +7,11 @@ using Microwave.Classes.Interfaces;
 
 namespace Microwave.Classes.Boundary
 {
-    class Button : IButton
+    class Output : IOutput
     {
-        public event EventHandler Pressed;
-
-        public void Press()
+        public void OutputLine(string line)
         {
-            Pressed?.Invoke(this, EventArgs.Empty);
+            System.Console.WriteLine(line);
         }
     }
 }
