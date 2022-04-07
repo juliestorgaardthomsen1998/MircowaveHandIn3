@@ -1,8 +1,4 @@
 ﻿using System;
-using Microwave.Classes;
-using Microwave.Classes.Boundary;
-using Microwave.Classes.Controllers;
-using Microwave.Classes.Interfaces;
 
 
 namespace HandIn3Microwave
@@ -11,6 +7,7 @@ namespace HandIn3Microwave
     {
         static void Main(string[] args)
         {
+            // tiljøjer noget her
             Button startCancelButton = new Button();
             Button powerButton = new Button();
             Button timeButton = new Button();
