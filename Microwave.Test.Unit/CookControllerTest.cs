@@ -1,4 +1,6 @@
 ﻿using System;
+using Microwave.Classes.Controllers;
+using Microwave.Classes.Interfaces;
 using NUnit.Framework;
 using NSubstitute;
 
