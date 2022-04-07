@@ -1,3 +1,4 @@
+using Microwave.Classes.Boundary;
 using NUnit.Framework;
 
 namespace Microwave.Test.Unit
