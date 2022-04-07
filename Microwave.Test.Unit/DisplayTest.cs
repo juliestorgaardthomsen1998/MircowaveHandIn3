@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microwave.Classes.Boundary;
 using NSubstitute;
 using NUnit.Framework;
+using Microwave.Classes.Interfaces;
+
 
 namespace Microwave.Test.Unit
 {
