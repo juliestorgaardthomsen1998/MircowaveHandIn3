@@ -7,7 +7,7 @@ using Microwave.Classes.Interfaces;
 
 namespace Microwave.Classes.Boundary
 {
-    class Light : ILight
+    public class Light : ILight
     {
         private IOutput myOutput;
         private bool isOn = false;

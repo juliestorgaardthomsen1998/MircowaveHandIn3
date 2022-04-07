@@ -7,7 +7,7 @@ using Microwave.Classes.Interfaces;
 
 namespace Microwave.Classes.Boundary
 {
-    class Display : IDisplay
+    public class Display : IDisplay
     {
         private IOutput myOutput;
 

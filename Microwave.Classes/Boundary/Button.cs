@@ -7,7 +7,7 @@ using Microwave.Classes.Interfaces;
 
 namespace Microwave.Classes.Boundary
 {
-    class Button : IButton
+    public class Button : IButton
     {
         public event EventHandler Pressed;
 
