@@ -16,6 +16,7 @@ namespace Microwave.Classes.Controllers
         private ICookController myCooker;
         private ILight myLight;
         private IDisplay myDisplay;
+        private IConfiguration myConfig; //addition
 
         private int powerLevel = 50;
         private int time = 1;
@@ -27,6 +28,7 @@ namespace Microwave.Classes.Controllers
             IDoor door,
             IDisplay display,
             ILight light,
+            IConfiguration config, // addition
             ICookController cooker)
         {
             powerButton.Pressed += new EventHandler(OnPowerPressed);
@@ -39,6 +41,7 @@ namespace Microwave.Classes.Controllers
             myCooker = cooker;
             myLight = light;
             myDisplay = display;
+            myConfig = config; //addition
         }
 
         private void ResetValues()
@@ -56,7 +59,7 @@ namespace Microwave.Classes.Controllers
                     myState = States.SETPOWER;
                     break;
                 case States.SETPOWER:
-                    powerLevel = (powerLevel >= 700 ? 50 : powerLevel+50);
+                    powerLevel = (powerLevel >= myConfig.MaxPower ? 50 : powerLevel+50); //700 changed to myConfig.MaxPower
                     myDisplay.ShowPower(powerLevel);
                     break;
             }
