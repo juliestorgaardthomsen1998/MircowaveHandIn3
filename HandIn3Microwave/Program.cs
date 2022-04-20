@@ -1,6 +1,9 @@
 ﻿using System;
+using Microwave.Classes;
 using Microwave.Classes.Boundary;
+using Microwave.Classes.Configuration;
 using Microwave.Classes.Controllers;
+using Microwave.Classes.Interfaces;
 
 
 
@@ -20,9 +23,14 @@ namespace HandIn3Microwave
 
             Output output = new Output();
 
+            IConfiguration config = new Configuration() //addition
+            {
+                MaxPower = 500
+            };
+
             Display display = new Display(output);
 
-            PowerTube powerTube = new PowerTube(output);
+            PowerTube powerTube = new PowerTube(output,config); //addition
 
             Light light = new Light(output);
 
