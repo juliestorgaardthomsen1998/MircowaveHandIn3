@@ -9,7 +9,7 @@ namespace Microwave.Classes.Boundary
 {
     class Buzzer : IBuzzer
     {
-        private IOutput myOutput;
+        private IOutput myOutput; 
         private bool isOn = false;
 
         public Buzzer(IOutput output)
