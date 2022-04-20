@@ -14,7 +14,7 @@ namespace Microwave.Classes.Boundary
 
         public Buzzer(IOutput output)
         {
-            myOutput = output;
+            myOutput = output; 
         }
         public void TurnOn()
         {
