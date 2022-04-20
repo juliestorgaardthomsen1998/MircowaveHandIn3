@@ -21,6 +21,7 @@ namespace Microwave.Test.Integration
         private ILight light;
         private IDisplay display;
         private ICookController cooker;
+        private IConfiguration config;
 
         [SetUp]
         public void Setup()
