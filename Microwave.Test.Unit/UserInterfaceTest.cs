@@ -35,6 +35,7 @@ namespace Microwave.Test.Unit
             light = Substitute.For<ILight>();
             display = Substitute.For<IDisplay>();
             cooker = Substitute.For<ICookController>();
+            config = Substitute.For<IConfiguration>();
 
             uut = new UserInterface(
                 powerButton, minutesButton, secondsButton, startCancelButton,
