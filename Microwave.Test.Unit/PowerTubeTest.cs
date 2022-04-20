@@ -31,15 +31,15 @@ namespace Microwave.Test.Unit
             output.Received().OutputLine(Arg.Is<string>(str => str.Contains($"{power}")));
         }
 
-        [TestCase(-5)]
-        [TestCase(-1)]
-        [TestCase(0)]
-        [TestCase(701)]
-        [TestCase(750)]
-        public void TurnOn_WasOffOutOfRangePower_ThrowsException(int power)
-        {
-            Assert.Throws<System.ArgumentOutOfRangeException>(() => uut.TurnOn(power));
-        }
+        //[TestCase(-5)]
+        //[TestCase(-1)]
+        //[TestCase(0)]
+        //[TestCase(701)]
+        //[TestCase(750)]
+        //public void TurnOn_WasOffOutOfRangePower_ThrowsException(int power)
+        //{
+        //    Assert.Throws<System.ArgumentOutOfRangeException>(() => uut.TurnOn(power));
+        //}
 
         [Test]
         public void TurnOff_WasOn_CorrectOutput()
