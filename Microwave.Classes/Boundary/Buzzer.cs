@@ -20,7 +20,7 @@ namespace Microwave.Classes.Boundary
         {
             if (!isOn)
             {
-                myOutput.OutputLine("beep beep beep");
+                myOutput.OutputLine("beep beep beep"); 
                 isOn = true;
             }
         }
