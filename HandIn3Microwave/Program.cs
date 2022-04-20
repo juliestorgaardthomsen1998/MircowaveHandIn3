@@ -22,7 +22,7 @@ namespace HandIn3Microwave
 
             IConfiguration config = new Configuration() //addition
             {
-                MaxPower = 500
+                MaxPower = 800
             };
 
             Display display = new Display(output);
