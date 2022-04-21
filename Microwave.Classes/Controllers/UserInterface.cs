@@ -41,7 +41,8 @@ namespace Microwave.Classes.Controllers
             myCooker = cooker;
             myLight = light;
             myDisplay = display;
-            myConfig = config; //addition
+            myConfig = config;
+            //config.MaxPower = 700;
         }
 
         private void ResetValues()

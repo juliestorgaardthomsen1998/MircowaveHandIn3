@@ -1,7 +1,11 @@
 ﻿using System;
 using Microwave.Classes.Controllers;
 using Microwave.Classes.Interfaces;
+using HandIn3Microwave;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
+using Microwave.Classes.Configuration;
 using NSubstitute;
+using NSubstitute.Extensions;
 using NUnit.Framework;
 
 namespace Microwave.Test.Unit
@@ -23,6 +27,8 @@ namespace Microwave.Test.Unit
         private ICookController cooker;
         private IConfiguration config;
 
+        private Program program;
+
         [SetUp]
         public void Setup()
         {
@@ -33,7 +39,12 @@ namespace Microwave.Test.Unit
             light = Substitute.For<ILight>();
             display = Substitute.For<IDisplay>();
             cooker = Substitute.For<ICookController>();
-            config = Substitute.For<IConfiguration>();
+            config = new Configuration()
+            {
+                MaxPower = 700
+            };
+           // config = Substitute.For<IConfiguration>();
+            program = Substitute.For<Program>();
 
             uut = new UserInterface(
                 powerButton, timeButton, startCancelButton,
@@ -42,6 +53,20 @@ namespace Microwave.Test.Unit
                 light,
                 config,
                 cooker);
+        }
+
+        [TestCase(-1)]
+        [TestCase(0)]
+        [TestCase(50)]
+        [TestCase(400)]
+        [TestCase(800)]
+        public void SetPower_MaxPower_MaxPowerIsSetCorrectly(int power)
+        {
+            config.MaxPower = power;
+
+            int test = config.MaxPower;
+            
+            Assert.AreEqual( power,test);
         }
 
         [Test]
