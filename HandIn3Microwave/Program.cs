@@ -36,7 +36,7 @@ namespace HandIn3Microwave
 
             Console.WriteLine("Press + to add 5 seconds");
             Console.WriteLine("Press - to substract 5 seconds");
-            Console.WriteLine("When you press enter, the program will stop");
+            Console.WriteLine("When you press e, the program will stop");
 
             // Simulate a simple sequence
 
@@ -60,12 +60,13 @@ namespace HandIn3Microwave
                     case '-':
                         timer.ChangeTime("-");
                         break;
-                    //case '':
-                    //    break;
+                    case 'e':
+                        Environment.Exit(0);
+                        break;
                 }
             }
 
-            Console.ReadLine();
+            
         }
     }
 }
