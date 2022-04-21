@@ -56,10 +56,10 @@ namespace HandIn3Microwave
                 switch (Console.ReadKey(true).KeyChar)
                 {
                     case '+':
-
+                        timer.ChangeTime("+");
                         break;
                     case '-':
-
+                        timer.ChangeTime("-");
                         break;
                     //case '':
                     //    break;
