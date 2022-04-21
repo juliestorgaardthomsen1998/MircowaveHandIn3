@@ -11,7 +11,7 @@ namespace HandIn3Microwave
             // tiljøjer noget her
             Button startCancelButton = new Button();
             Button powerButton = new Button();
-            Button timeButton = new Button();
+            Button minutesButton = new Button();
             Button secondsButton = new Button();
 
             Door door = new Door();
@@ -28,7 +28,7 @@ namespace HandIn3Microwave
 
             CookController cooker = new CookController(timer, display, powerTube);
 
-            UserInterface ui = new UserInterface(powerButton, timeButton, startCancelButton, door, display, light, cooker);
+            UserInterface ui = new UserInterface(powerButton, minutesButton,secondsButton, startCancelButton, door, display, light, cooker);
 
             // Finish the double association
             cooker.UI = ui;
