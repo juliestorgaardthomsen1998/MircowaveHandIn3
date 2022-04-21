@@ -57,20 +57,10 @@ namespace Microwave.Classes.Boundary
         }
 
         
-        public void ChangeTime()
+        public void ChangeTime(string value
+            )
         {
-            while (true)
-            {
-                switch (Console.ReadKey(true).KeyChar)
-                {
-                    case '+':
-                        TimeRemaining += 5;
-                        break;
-                    case '-':
-                        TimeRemaining -= 5;
-                        break;
-                }
-            }
+            
         }
     }
 }

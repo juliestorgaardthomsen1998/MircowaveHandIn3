@@ -33,22 +33,34 @@ namespace HandIn3Microwave
             // Finish the double association
             cooker.UI = ui;
 
+            Console.WriteLine("Press + to add 5 seconds");
+            Console.WriteLine("Press - to substract 5 seconds");
+            Console.WriteLine("When you press enter, the program will stop");
+
             // Simulate a simple sequence
 
             powerButton.Press();
 
             timeButton.Press();
-            timer.ChangeTime();
 
             startCancelButton.Press();
 
-            // The simple sequence should now run
-            Console.WriteLine("Press + to add 5 seconds");
-            Console.WriteLine("Press - to substract 5 seconds");
-            System.Console.WriteLine("When you press enter, the program will stop");
-            // Wait for input
+            while (true)
+            {
+                switch (Console.ReadKey(true).KeyChar)
+                {
+                    case '+':
 
-            System.Console.ReadLine();
+                        break;
+                    case '-':
+
+                        break;
+                    //case '':
+                    //    break;
+                }
+            }
+
+            Console.ReadLine();
         }
     }
 }
