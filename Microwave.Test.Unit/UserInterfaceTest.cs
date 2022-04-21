@@ -27,8 +27,6 @@ namespace Microwave.Test.Unit
         private ICookController cooker;
         private IConfiguration config;
 
-        private Program program;
-
         [SetUp]
         public void Setup()
         {
@@ -39,12 +37,11 @@ namespace Microwave.Test.Unit
             light = Substitute.For<ILight>();
             display = Substitute.For<IDisplay>();
             cooker = Substitute.For<ICookController>();
+
             config = new Configuration()
             {
                 MaxPower = 700
             };
-           // config = Substitute.For<IConfiguration>();
-            program = Substitute.For<Program>();
 
             uut = new UserInterface(
                 powerButton, timeButton, startCancelButton,
