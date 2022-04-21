@@ -51,23 +51,12 @@ namespace HandIn3Microwave
 
             startCancelButton.Press();
 
-            while (true)
-            {
-                switch (Console.ReadKey(true).KeyChar)
-                {
-                    case '+':
-                        timer.ChangeTime("+");
-                        break;
-                    case '-':
-                        timer.ChangeTime("-");
-                        break;
-                    case 'e':
-                        Environment.Exit(0);
-                        break;
-                }
-            }
+            // The simple sequence should now run
 
-            
+            System.Console.WriteLine("When you press enter, the program will stop");
+            // Wait for input
+
+            System.Console.ReadLine();
         }
     }
 }
