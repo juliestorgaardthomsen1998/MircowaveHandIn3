@@ -9,6 +9,9 @@ namespace Microwave.Classes.Configuration
 {
     public class Configuration : IConfiguration
     {
+
         public int MaxPower { get; set; }
+
+        
     }
 }

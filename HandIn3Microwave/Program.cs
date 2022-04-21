@@ -25,7 +25,7 @@ namespace HandIn3Microwave
 
             IConfiguration config = new Configuration() //addition
             {
-                MaxPower = 800
+                MaxPower = 100
             };
 
             Display display = new Display(output);
@@ -49,6 +49,10 @@ namespace HandIn3Microwave
 
             // Simulate a simple sequence
 
+            powerButton.Press();
+            powerButton.Press();
+            powerButton.Press();
+            powerButton.Press();
             powerButton.Press();
 
             minutesButton.Press();
