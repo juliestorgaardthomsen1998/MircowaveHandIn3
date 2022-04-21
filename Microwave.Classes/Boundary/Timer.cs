@@ -57,10 +57,16 @@ namespace Microwave.Classes.Boundary
         }
 
         
-        public void ChangeTime(string value
-            )
+        public void ChangeTime(string value)
         {
-            
+            if (value == "+")
+            {
+                TimeRemaining += 5;
+            }
+            else if (value == "-")
+            {
+                TimeRemaining -= 5;
+            }
         }
     }
 }
