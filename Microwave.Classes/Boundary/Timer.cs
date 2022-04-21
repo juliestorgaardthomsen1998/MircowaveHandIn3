@@ -55,5 +55,22 @@ namespace Microwave.Classes.Boundary
                 Expire();
             }
         }
+
+        
+        public void ChangeTime(object sender, System.Timers.ElapsedEventArgs args)
+        {
+            while (true)
+            {
+                switch (Console.ReadKey(true).KeyChar)
+                {
+                    case '+':
+                        TimeRemaining += 5;
+                        break;
+                    case '-':
+                        TimeRemaining -= 5;
+                        break;
+                }
+            }
+        }
     }
 }
