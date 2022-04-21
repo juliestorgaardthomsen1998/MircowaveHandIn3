@@ -57,7 +57,7 @@ namespace Microwave.Classes.Boundary
         }
 
         
-        public void ChangeTime(object sender, System.Timers.ElapsedEventArgs args)
+        public void ChangeTime()
         {
             while (true)
             {

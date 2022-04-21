@@ -25,7 +25,7 @@ namespace HandIn3Microwave
 
             Light light = new Light(output);
 
-            Microwave.Classes.Boundary.Timer timer = new Timer();
+            Timer timer = new Timer();
 
             CookController cooker = new CookController(timer, display, powerTube);
 
@@ -47,7 +47,8 @@ namespace HandIn3Microwave
             startCancelButton.Press();
 
             // The simple sequence should now run
-
+            Console.WriteLine("Press + to add 5 seconds");
+            Console.WriteLine("Press - to substract 5 seconds");
             System.Console.WriteLine("When you press enter, the program will stop");
             // Wait for input
 
