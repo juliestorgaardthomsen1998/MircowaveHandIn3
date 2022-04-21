@@ -12,6 +12,7 @@ namespace HandIn3Microwave
             Button startCancelButton = new Button();
             Button powerButton = new Button();
             Button timeButton = new Button();
+            Button secondsButton = new Button();
 
             Door door = new Door();
 
