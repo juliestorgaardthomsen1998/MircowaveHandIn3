@@ -61,12 +61,13 @@ namespace HandIn3Microwave
                     case '-':
                         timer.ChangeTime("-");
                         break;
-                    //case '':
-                    //    break;
+                    case 'e':
+                        Environment.Exit(0);
+                        break;
                 }
             }
 
-            Console.ReadLine();
+            
         }
     }
 }
