@@ -39,6 +39,7 @@ namespace Microwave.Test.Unit
         public void TurnOff_BuzzerIsTurnedOff_ReceivedOutputIsCorrectAndIsOnIsFalse()
         {
             //Act
+            uut.TurnOn();
             uut.TurnOff();
 
             //Assert
