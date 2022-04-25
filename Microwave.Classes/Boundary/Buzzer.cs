@@ -7,10 +7,11 @@ using Microwave.Classes.Interfaces;
 
 namespace Microwave.Classes.Boundary
 {
-    class Buzzer : IBuzzer
+    public class Buzzer : IBuzzer
     {
-        private IOutput myOutput; 
-        private bool isOn = false;
+        private IOutput myOutput;
+        public bool isOn { get; set; } = false;
+        //private bool isOn = false;
 
         public Buzzer(IOutput output)
         {
