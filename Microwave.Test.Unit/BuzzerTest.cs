@@ -25,20 +25,25 @@ namespace Microwave.Test.Unit
         }
 
         [Test]
-        public void TurnOn_BuzzerIsTurnedOn_OutputIsCorrectAndIsOnIsTrue()
+        public void TurnOn_BuzzerIsTurnedOn_ReceivedOutputIsCorrectAndIsOnIsTrue()
         {
             //Act
             uut.TurnOn();
 
             //Assert
-            Assert.That(output,Is.EqualTo("beep beep beep"));
+            output.Received(1).OutputLine("beep beep beep");
             Assert.That(uut.isOn,Is.EqualTo(true));
         }
 
         [Test]
-        public void Press_1subscriber_IsNotified()
+        public void TurnOff_BuzzerIsTurnedOff_ReceivedOutputIsCorrectAndIsOnIsFalse()
         {
-          
+            //Act
+            uut.TurnOff();
+
+            //Assert
+            output.Received(1).OutputLine("*silence*");
+            Assert.That(uut.isOn, Is.EqualTo(false));
         }
 
     }
