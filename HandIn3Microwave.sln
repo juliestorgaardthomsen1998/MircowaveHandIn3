@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandIn3Microwave", "HandIn3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microwave.Classes", "Microwave.Classes\Microwave.Classes.csproj", "{21647FFE-2170-45C3-BC8D-C19FF6176768}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microwave.Test.Integration", "Microwave.Test.Integration\Microwave.Test.Integration.csproj", "{D253D283-6E3E-45C0-83AE-D211C202FEB5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microwave.Test.Unit", "Microwave.Test.Unit\Microwave.Test.Unit.csproj", "{A36E542F-299C-4B52-83DA-76CE58871A18}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{21647FFE-2170-45C3-BC8D-C19FF6176768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21647FFE-2170-45C3-BC8D-C19FF6176768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21647FFE-2170-45C3-BC8D-C19FF6176768}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D253D283-6E3E-45C0-83AE-D211C202FEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D253D283-6E3E-45C0-83AE-D211C202FEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D253D283-6E3E-45C0-83AE-D211C202FEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D253D283-6E3E-45C0-83AE-D211C202FEB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A36E542F-299C-4B52-83DA-76CE58871A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A36E542F-299C-4B52-83DA-76CE58871A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A36E542F-299C-4B52-83DA-76CE58871A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
