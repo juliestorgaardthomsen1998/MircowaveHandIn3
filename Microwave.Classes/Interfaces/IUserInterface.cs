@@ -9,7 +9,8 @@ namespace Microwave.Classes.Interfaces
     public interface IUserInterface
     {
         void OnPowerPressed(object sender, EventArgs e);
-        void OnTimePressed(object sender, EventArgs e);
+        void OnMinutesPressed(object sender, EventArgs e);
+        void OnSecondsPressed(object sender, EventArgs e);
         void OnStartCancelPressed(object sender, EventArgs e);
 
         void OnDoorOpened(object sender, EventArgs e);

@@ -41,6 +41,8 @@ namespace HandIn3Microwave
 
             secondsButton.Press();
 
+            secondsButton.Press();
+
             startCancelButton.Press();
 
             // The simple sequence should now run

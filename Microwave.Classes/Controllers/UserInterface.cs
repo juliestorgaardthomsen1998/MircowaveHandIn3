@@ -32,9 +32,9 @@ namespace Microwave.Classes.Controllers
             ICookController cooker)
         {
             powerButton.Pressed += new EventHandler(OnPowerPressed);
-            minutesButton.Pressed += new EventHandler(OnTimePressed);
+            minutesButton.Pressed += new EventHandler(OnMinutesPressed);
             startCancelButton.Pressed += new EventHandler(OnStartCancelPressed);
-            secondsButton.Pressed += new EventHandler(OnTimePressed);
+            secondsButton.Pressed += new EventHandler(OnSecondsPressed);
 
             door.Closed += new EventHandler(OnDoorClosed);
             door.Opened += new EventHandler(OnDoorOpened);
@@ -65,7 +65,7 @@ namespace Microwave.Classes.Controllers
             }
         }
 
-        public void OnTimePressed(object sender, EventArgs e)
+        public void OnMinutesPressed(object sender, EventArgs e)
         {
             switch (myState)
             {
@@ -75,6 +75,20 @@ namespace Microwave.Classes.Controllers
                     break;
                 case States.SETTIME:
                     minutes += 1;
+                    myDisplay.ShowTime(minutes, seconds);
+                    break;
+            }
+        }
+        public void OnSecondsPressed(object sender, EventArgs e)
+        {
+            switch (myState)
+            {
+                case States.SETPOWER:
+                    myDisplay.ShowTime(minutes, seconds);
+                    myState = States.SETTIME;
+                    break;
+                case States.SETTIME:
+                    seconds += 1;
                     myDisplay.ShowTime(minutes, seconds);
                     break;
             }
