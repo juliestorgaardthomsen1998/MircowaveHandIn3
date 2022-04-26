@@ -27,7 +27,7 @@ namespace Microwave.Test.Unit
         [TestCase(100)]
         [TestCase(499)]
         [TestCase(500)]
-        public void TurnOn_WasOffCorrectPower500_CorrectOutput(int power)
+        public void TurnOn_WasOffCorrectPower500W_CorrectOutput(int power)
         {
             config.MaxPower = 500; //
 
@@ -40,14 +40,14 @@ namespace Microwave.Test.Unit
         [TestCase(0)]
         [TestCase(801)]
         [TestCase(850)]
-        public void TurnOn_WasOffOutOfRangePower800_ThrowsException(int power)
+        public void TurnOn_WasOffOutOfRangePower800W_ThrowsException(int power)
         {
             config.MaxPower = 800;
             Assert.Throws<System.ArgumentOutOfRangeException>(() => uut.TurnOn(power));
         }
 
         [Test]
-        public void TurnOff_WasOn700_CorrectOutput()
+        public void TurnOff_WasOn700W_CorrectOutput()
         {
             config.MaxPower = 700;
             uut.TurnOn(50);
@@ -56,7 +56,7 @@ namespace Microwave.Test.Unit
         }
 
         [Test]
-        public void TurnOff_WasOn1000_CorrectOutput()
+        public void TurnOff_WasOn1000W_CorrectOutput()
         {
             config.MaxPower = 1000;
             uut.TurnOn(50);
