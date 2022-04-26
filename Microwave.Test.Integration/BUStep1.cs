@@ -38,7 +38,7 @@ namespace Microwave.Test.Integration
         [Test]
         public void CookController_PowerTube_TurnOn_50W()
         {
-            cooker.StartCooking(50, 60);
+            cooker.StartCooking(50, 60,0);
 
             output.Received().OutputLine(Arg.Is<string>(str => str.Contains("50")));
         }
@@ -46,7 +46,7 @@ namespace Microwave.Test.Integration
         [Test]
         public void CookController_PowerTube_TurnOn_150W()
         {
-            cooker.StartCooking(150, 60);
+            cooker.StartCooking(150, 60,0);
 
             output.Received().OutputLine(Arg.Is<string>(str => str.Contains("150")));
         }
@@ -54,7 +54,7 @@ namespace Microwave.Test.Integration
         [Test]
         public void CookController_PowerTube_TurnOn_700W()
         {
-            cooker.StartCooking(700, 60);
+            cooker.StartCooking(700, 60,0);
 
             output.Received().OutputLine(Arg.Is<string>(str => str.Contains("700")));
         }
@@ -66,7 +66,7 @@ namespace Microwave.Test.Integration
         [Test]
         public void CookController_Display_Showtime()
         {
-            cooker.StartCooking(50, 60);
+            cooker.StartCooking(50, 60,0);
 
             // Wait for the first tick to have happened
             Thread.Sleep(1050);
@@ -81,7 +81,7 @@ namespace Microwave.Test.Integration
         [Test]
         public void CookController_Timer_Start_3sec_LongEnough()
         {
-            cooker.StartCooking(50, 3);
+            cooker.StartCooking(50, 3,0);
 
             Thread.Sleep(2900);  // Wait almost 3 seconds
 
@@ -92,7 +92,7 @@ namespace Microwave.Test.Integration
         [Test]
         public void CookController_Timer_Start_3sec_ShortEnough()
         {
-            cooker.StartCooking(50, 3);
+            cooker.StartCooking(50, 3,0);
 
             Thread.Sleep(3100);  // Wait a little more than 3 seconds
 
@@ -103,7 +103,7 @@ namespace Microwave.Test.Integration
         [Test]
         public void Cookcontroller_Timer_TimerTicks()
         {
-            cooker.StartCooking(50, 60);
+            cooker.StartCooking(50, 60,0);
 
             Thread.Sleep(1050); // Wait a little longer than the first tick
 

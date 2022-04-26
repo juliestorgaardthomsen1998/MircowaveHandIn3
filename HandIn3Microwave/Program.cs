@@ -37,7 +37,9 @@ namespace HandIn3Microwave
 
             powerButton.Press();
 
-            timeButton.Press();
+            minutesButton.Press();
+
+            secondsButton.Press();
 
             startCancelButton.Press();
 
