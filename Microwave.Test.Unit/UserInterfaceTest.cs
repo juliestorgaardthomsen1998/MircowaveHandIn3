@@ -138,12 +138,23 @@ namespace Microwave.Test.Unit
         }
 
         [Test]
-        public void SetPower_TimeButton_TimeIs1()
+        public void SetPower_MinutesButton_TimeIs1()
         {
             // Also checks if TimeButton is subscribed
             powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
             // Now in SetPower
             minutesButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+
+            display.Received(1).ShowTime(Arg.Is<int>(1), Arg.Is<int>(1));
+        }
+
+        [Test]
+        public void SetPower_SecondsButton_TimeIs1()
+        {
+            // Also checks if TimeButton is subscribed
+            powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            // Now in SetPower
+            secondsButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
 
             display.Received(1).ShowTime(Arg.Is<int>(1), Arg.Is<int>(1));
         }
@@ -157,6 +168,17 @@ namespace Microwave.Test.Unit
             minutesButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
 
             display.Received(1).ShowTime(Arg.Is<int>(2), Arg.Is<int>(1));
+        }
+
+        [Test]
+        public void SetPower_2SecondButton_TimeIs2()
+        {
+            powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            // Now in SetPower
+            secondsButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            secondsButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+
+            display.Received(1).ShowTime(Arg.Is<int>(1), Arg.Is<int>(2));
         }
 
         [Test]

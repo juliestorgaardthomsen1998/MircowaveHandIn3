@@ -48,6 +48,7 @@ namespace Microwave.Classes.Controllers
         {
             powerLevel = 50;
             minutes = 1;
+            seconds = 1;
         }
 
         public void OnPowerPressed(object sender, EventArgs e)
