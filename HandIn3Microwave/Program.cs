@@ -38,7 +38,9 @@ namespace HandIn3Microwave
 
             CookController cooker = new CookController(timer, display, powerTube);
 
-            UserInterface ui = new UserInterface(powerButton, minutesButton,secondsButton, startCancelButton, door, display, light, cooker);
+
+            UserInterface ui = new UserInterface(powerButton, minutesButton,secondsButton, startCancelButton, door, display, light, config, cooker);
+
 
             // Finish the double association
             cooker.UI = ui;

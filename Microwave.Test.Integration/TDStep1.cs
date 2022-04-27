@@ -36,8 +36,9 @@ namespace Microwave.Test.Integration
             display = Substitute.For<IDisplay>();
             cooker = Substitute.For<ICookController>();
 
-            ui = new UserInterface(powerButton, minutesButton,secondsButton, startCancelButton, door, display, light, cooker);
-        }
+
+            ui = new UserInterface(powerButton, minutesButton,secondsButton, startCancelButton, door, display, light, config, cooker);
+
 
         [Test]
         public void Door_UI_DoorOpen()
