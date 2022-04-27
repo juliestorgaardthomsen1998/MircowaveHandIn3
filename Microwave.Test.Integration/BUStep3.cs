@@ -20,7 +20,8 @@ namespace Microwave.Test.Integration
         private Light light;
 
         private Button powerButton;
-        private Button timeButton;
+        private Button minutesButton;
+        private Button secondsButton;
         private Button startCancelButton;
 
         private Door door;
@@ -32,7 +33,8 @@ namespace Microwave.Test.Integration
             output = Substitute.For<IOutput>();
 
             powerButton = new Button();
-            timeButton = new Button();
+            minutesButton = new Button();
+            secondsButton = new Button();
             startCancelButton = new Button();
 
             door = new Door();
@@ -46,7 +48,7 @@ namespace Microwave.Test.Integration
             cooker = new CookController(timer, display, powerTube);
             
             ui = new UserInterface(
-                powerButton, timeButton, startCancelButton,
+                powerButton, minutesButton,secondsButton, startCancelButton,
                 door,
                 display, light, config, cooker);
 
@@ -73,7 +75,7 @@ namespace Microwave.Test.Integration
         public void Button_UserInterface_TimeButtonPressed()
         {
             powerButton.Press();
-            timeButton.Press();
+            minutesButton.Press();
 
             // Should now show time 01:00
             output.Received().OutputLine(Arg.Is<string>(str => str.Contains("01:00")));

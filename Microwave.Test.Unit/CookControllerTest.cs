@@ -30,15 +30,15 @@ namespace Microwave.Test.Unit
         [Test]
         public void StartCooking_ValidParameters_TimerStarted()
         {
-            uut.StartCooking(50, 60);
+            uut.StartCooking(50, 60,0);
 
-            timer.Received().Start(60);
+            timer.Received().Start(3600);
         }
 
         [Test]
         public void StartCooking_ValidParameters_PowerTubeStarted()
         {
-            uut.StartCooking(50, 60);
+            uut.StartCooking(50, 60,0);
 
             powerTube.Received().TurnOn(50);
         }
@@ -46,7 +46,7 @@ namespace Microwave.Test.Unit
         [Test]
         public void Cooking_TimerTick_DisplayCalled()
         {
-            uut.StartCooking(50, 60);
+            uut.StartCooking(50, 60,0);
 
             timer.TimeRemaining.Returns(115);
             timer.TimerTick += Raise.EventWith(this, EventArgs.Empty);
@@ -57,7 +57,7 @@ namespace Microwave.Test.Unit
         [Test]
         public void Cooking_TimerExpired_PowerTubeOff()
         {
-            uut.StartCooking(50, 60);
+            uut.StartCooking(50, 60,0);
 
             timer.Expired += Raise.EventWith(this, EventArgs.Empty);
 
@@ -67,7 +67,7 @@ namespace Microwave.Test.Unit
         [Test]
         public void Cooking_TimerExpired_UICalled()
         {
-            uut.StartCooking(50, 60);
+            uut.StartCooking(50, 60,0);
 
             timer.Expired += Raise.EventWith(this, EventArgs.Empty);
 
@@ -77,7 +77,7 @@ namespace Microwave.Test.Unit
         [Test]
         public void Cooking_Stop_PowerTubeOff()
         {
-            uut.StartCooking(50, 60);
+            uut.StartCooking(50, 60,0);
             uut.Stop();
 
             powerTube.Received().TurnOff();

@@ -23,7 +23,8 @@ namespace Microwave.Test.Integration
         private Light light;
 
         private IButton powerButton;
-        private IButton timeButton;
+        private IButton minutesButton;
+        private IButton secondsButton;
         private IButton startCancelButton;
 
         private IDoor door;
@@ -35,7 +36,8 @@ namespace Microwave.Test.Integration
             output = Substitute.For<IOutput>();
 
             powerButton = Substitute.For<IButton>();
-            timeButton = Substitute.For<IButton>();
+            minutesButton = Substitute.For<IButton>();
+            secondsButton = Substitute.For<IButton>();
             startCancelButton = Substitute.For<IButton>();
 
             door = Substitute.For<IDoor>();
@@ -50,7 +52,7 @@ namespace Microwave.Test.Integration
 
 
             ui = new UserInterface(
-                powerButton, timeButton, startCancelButton,
+                powerButton, minutesButton, secondsButton, startCancelButton,
                 door, 
                 display, light, config, cooker);
 
@@ -94,7 +96,7 @@ namespace Microwave.Test.Integration
         public void UserInterface_Display_ShowTime()
         {
             powerButton.Pressed += Raise.Event();
-            timeButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
 
             // Should now show time 01:00
             output.Received().OutputLine(Arg.Is<string>(str => str.Contains("01:00")));
@@ -117,7 +119,7 @@ namespace Microwave.Test.Integration
         public void UserInterface_CookController_StartCooking_50W()
         {
             powerButton.Pressed += Raise.Event();
-            timeButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
             startCancelButton.Pressed += Raise.Event();
 
             // Should start cooking 
@@ -131,7 +133,7 @@ namespace Microwave.Test.Integration
             powerButton.Pressed += Raise.Event();
             powerButton.Pressed += Raise.Event();
             powerButton.Pressed += Raise.Event();
-            timeButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
             startCancelButton.Pressed += Raise.Event();
 
             // Should start cooking 
@@ -147,7 +149,7 @@ namespace Microwave.Test.Integration
                 powerButton.Pressed += Raise.Event();
             }
 
-            timeButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
             startCancelButton.Pressed += Raise.Event();
 
             // Should start cooking 
@@ -158,7 +160,7 @@ namespace Microwave.Test.Integration
         public void UserInterface_CookController_StartCooking_1min()
         {
             powerButton.Pressed += Raise.Event();
-            timeButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
             startCancelButton.Pressed += Raise.Event();
 
             // Should start cooking 
@@ -173,8 +175,8 @@ namespace Microwave.Test.Integration
         public void UserInterface_CookController_StartCooking_2min()
         {
             powerButton.Pressed += Raise.Event();
-            timeButton.Pressed += Raise.Event();
-            timeButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
             startCancelButton.Pressed += Raise.Event();
 
             // Should start cooking 
@@ -190,7 +192,7 @@ namespace Microwave.Test.Integration
         {
             // Checks the call back from CookController to UserInterface
             powerButton.Pressed += Raise.Event();
-            timeButton.Pressed += Raise.Event();
+            minutesButton.Pressed += Raise.Event();
             startCancelButton.Pressed += Raise.Event();
 
             // Should start cooking 

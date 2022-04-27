@@ -5,16 +5,18 @@ using Microwave.Classes.Configuration;
 using Microwave.Classes.Controllers;
 using Microwave.Classes.Interfaces;
 
+
 namespace HandIn3Microwave
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             // tiljøjer noget her
             Button startCancelButton = new Button();
             Button powerButton = new Button();
-            Button timeButton = new Button();
+            Button minutesButton = new Button();
+            Button secondsButton = new Button();
 
             Door door = new Door();
 
@@ -31,14 +33,20 @@ namespace HandIn3Microwave
 
             Light light = new Light(output);
 
-            Microwave.Classes.Boundary.Timer timer = new Timer();
+            Timer timer = new Timer();
 
             CookController cooker = new CookController(timer, display, powerTube);
 
-            UserInterface ui = new UserInterface(powerButton, timeButton, startCancelButton, door, display, light, config, cooker); //addition
+
+            UserInterface ui = new UserInterface(powerButton, minutesButton,secondsButton, startCancelButton, door, display, light, config, cooker);
+
 
             // Finish the double association
             cooker.UI = ui;
+
+            Console.WriteLine("Press + to add 5 seconds");
+            Console.WriteLine("Press - to substract 5 seconds");
+            Console.WriteLine("When you press e, the program will stop");
 
             // Simulate a simple sequence
 
@@ -48,16 +56,31 @@ namespace HandIn3Microwave
             powerButton.Press();
             powerButton.Press();
 
-            timeButton.Press();
+            minutesButton.Press();
+
+            secondsButton.Press();
+
+            secondsButton.Press();
 
             startCancelButton.Press();
 
-            // The simple sequence should now run
+            while (true)
+            {
+                switch (Console.ReadKey(true).KeyChar)
+                {
+                    case '+':
+                        timer.ChangeTime("+");
+                        break;
+                    case '-':
+                        timer.ChangeTime("-");
+                        break;
+                    case 'e':
+                        Environment.Exit(0);
+                        break;
+                }
+            }
 
-            System.Console.WriteLine("When you press enter, the program will stop");
-            // Wait for input
-
-            System.Console.ReadLine();
+            
         }
     }
 }

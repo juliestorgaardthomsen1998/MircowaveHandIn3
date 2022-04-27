@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    public interface ICookController
+    interface IBuzzer
     {
-        void StartCooking(int power, int minutes,int seconds);
-        void Stop();
+        void TurnOn();
+        void TurnOff();
     }
 }

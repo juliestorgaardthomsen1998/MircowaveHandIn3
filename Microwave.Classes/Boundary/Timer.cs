@@ -55,5 +55,18 @@ namespace Microwave.Classes.Boundary
                 Expire();
             }
         }
+
+        
+        public void ChangeTime(string value)
+        {
+            if (value == "+")
+            {
+                TimeRemaining += 5;
+            }
+            else if (value == "-")
+            {
+                TimeRemaining -= 5;
+            }
+        }
     }
 }
