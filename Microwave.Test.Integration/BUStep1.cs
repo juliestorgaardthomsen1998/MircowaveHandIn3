@@ -18,6 +18,7 @@ namespace Microwave.Test.Integration
         private CookController cooker;
 
         private IUserInterface ui;
+        private IConfiguration config;
 
         [SetUp]
         public void Setup()
@@ -26,7 +27,7 @@ namespace Microwave.Test.Integration
 
             timer = new Timer();
             display = new Display(output);
-            powerTube = new PowerTube(output);
+            powerTube = new PowerTube(output, config);
 
             ui = Substitute.For<IUserInterface>();
 
