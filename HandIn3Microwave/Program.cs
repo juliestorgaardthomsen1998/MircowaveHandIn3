@@ -2,9 +2,10 @@
 using Microwave.Classes.Boundary;
 using Microwave.Classes.Controllers;
 
+
 namespace HandIn3Microwave
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -23,7 +24,7 @@ namespace HandIn3Microwave
 
             Light light = new Light(output);
 
-            Microwave.Classes.Boundary.Timer timer = new Timer();
+            Timer timer = new Timer();
 
             CookController cooker = new CookController(timer, display, powerTube);
 
@@ -31,6 +32,10 @@ namespace HandIn3Microwave
 
             // Finish the double association
             cooker.UI = ui;
+
+            Console.WriteLine("Press + to add 5 seconds");
+            Console.WriteLine("Press - to substract 5 seconds");
+            Console.WriteLine("When you press e, the program will stop");
 
             // Simulate a simple sequence
 
@@ -40,12 +45,23 @@ namespace HandIn3Microwave
 
             startCancelButton.Press();
 
-            // The simple sequence should now run
+            while (true)
+            {
+                switch (Console.ReadKey(true).KeyChar)
+                {
+                    case '+':
+                        timer.ChangeTime("+");
+                        break;
+                    case '-':
+                        timer.ChangeTime("-");
+                        break;
+                    case 'e':
+                        Environment.Exit(0);
+                        break;
+                }
+            }
 
-            System.Console.WriteLine("When you press enter, the program will stop");
-            // Wait for input
-
-            System.Console.ReadLine();
+            
         }
     }
 }
