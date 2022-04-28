@@ -35,8 +35,8 @@ namespace Microwave.Classes.Controllers
         {
             powerButton.Pressed += new EventHandler(OnPowerPressed);
             minutesButton.Pressed += new EventHandler(OnMinutesPressed);
-            startCancelButton.Pressed += new EventHandler(OnStartCancelPressed);
             secondsButton.Pressed += new EventHandler(OnSecondsPressed);
+            startCancelButton.Pressed += new EventHandler(OnStartCancelPressed);
 
             door.Closed += new EventHandler(OnDoorClosed);
             door.Opened += new EventHandler(OnDoorOpened);
