@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microwave.Classes.Interfaces
 {
-    interface IBuzzer
+    public interface IBuzzer
     {
         void TurnOn();
         void TurnOff();

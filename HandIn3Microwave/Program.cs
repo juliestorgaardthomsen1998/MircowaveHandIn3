@@ -35,8 +35,9 @@ namespace HandIn3Microwave
             Light light = new Light(output);
 
             Timer timer = new Timer();
+            Buzzer buzzer = new Buzzer(output);
 
-            CookController cooker = new CookController(timer, display, powerTube);
+            CookController cooker = new CookController(timer, display, powerTube, buzzer);
 
 
             UserInterface ui = new UserInterface(powerButton, minutesButton,secondsButton, startCancelButton, door, display, light, config, cooker);
